@@ -5,6 +5,7 @@ int min(int a, int b)
 {
 return (a < b) ? a : b;
 }
+
 int main()
 {
 int n, amount;
@@ -33,10 +34,10 @@ for (int i = 1; i <= n; i++)
 {
 for (int j = 1; j <= amount; j++)
    {
-if (j >= coin[i])
-T[i][j] = min(T[i - 1][j], 1 + T[i][j - coin[i]]);
-else
-T[i][j] = T[i - 1][j];
+    if (j >= coin[i])
+        T[i][j] = min(T[i - 1][j], 1 + T[i][j - coin[i]]);
+    else
+        T[i][j] = T[i - 1][j];
 
           }
 }
